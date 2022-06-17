@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'watch.apps.WatchConfig',
     'bootstrap3',
+    'cloudinary',
+
 ]
 
 MIDDLEWARE = [
@@ -81,6 +86,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+cloudinary.config( 
+  cloud_name = "dgtjsiwow", 
+  api_key = "346831399935182", 
+  api_secret = "ofyOVu1Z9VbnIUyx9BJ1oCHWd1w" 
+)
 
 
 # Password validation
