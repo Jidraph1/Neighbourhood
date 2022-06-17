@@ -1,0 +1,84 @@
+/* GENERAL */
+body {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+p,
+form,
+::placeholder {
+    font-family: 'Source Sans Pro';
+    font-size: smaller;
+    color: #716F81;
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins';
+    font-weight: lighter;
+    color: #86340A;
+}
+
+a {
+    color: #86340A;
+    text-decoration: none;
+}
+
+::selection {
+    color: #fff;
+    background-color: #86340A;
+}
+
+.login-body {
+    width: 350px;
+    margin: 0 auto 3% auto;
+    padding: 7%;
+    box-shadow: 0 7px 10px 0 #716F81, 0 8px 22px 0 #716F81;
+
+}
+
+.login-btn {
+    width: 258px;
+    margin: 0 auto;
+    border-radius: 0%;
+    background-color: #fff;
+    color: #86340A;
+    border: 3px solid #86340A;
+}
+
+.login-btn:hover {
+    border: 3px solid black;
+    color: black;
+    transition: 250ms;
+    background-color: #fff;
+}
+
+.register-body {
+    width: 550px;
+    margin: 1% auto 0 auto;
+    padding: 4%;
+    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+    height: 600px;
+
+}
+
+.logout-text {
+    font-size: 1.5rem;
+}
+
+.prof-body {
+
+    width: 70%;
+    padding: 5%;
+    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+}
