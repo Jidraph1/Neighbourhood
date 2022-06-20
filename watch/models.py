@@ -41,4 +41,67 @@ class NeighbourHood(models.Model):
         A method that updates a neighbourhood
         """
         neighbourhood = cls.objects.filter(id=id).update(id=id)
-        return neighbourhood    
+        return neighbourhood  
+
+# Profile Model
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    profile_picture = CloudinaryField('image')
+    bio = models.CharField(max_length=250)
+    email =  models.CharField(max_length=60)
+    phone_number = models.IntegerField(blank=True)
+    neighbourhood = models.ForeignKey(NeighbourHood, on_delete=models.SET_NULL, null=True, related_name='neighbour', blank=True)
+    posted_at = models.DateTimeField(auto_now=True)
+        
+    def __str__(self):
+        return self.user    
+  
+# Business Model    
+class Business(models.Model):
+    name = models.CharField(max_length=200)
+    image = CloudinaryField('image')
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)     
+    email =  models.CharField(max_length=60)
+    phone_number = models.IntegerField(blank=True)
+    neighbourhood = models.ForeignKey(NeighbourHood,on_delete=models.CASCADE, related_name='business',null=True)
+    posted_at = models.DateTimeField(auto_now=True)
+        
+    def __str__(self):
+        return self.name      
+    
+    def create_business(self):
+        """
+        A method that creates a business
+        """
+        self.save()
+
+    def delete_business(self):
+        """
+        A method that deletes a business
+        """        
+        self.delete()
+            
+    @classmethod
+    def search_business(cls,search_term):
+        """
+        A method that searches a business
+        """          
+        businesses = cls.objects.filter(name__icontains = search_term).all()
+        return businesses 
+    
+    @classmethod
+    def find_business(cls, business_id):
+        """
+        A method that finds a business using its id
+        """         
+        business = Business.objects.filter(id=business_id)
+        return business  
+    
+    @classmethod
+    def update_business(cls, id):
+        """
+        A method that updates a business using its id
+        """  
+        business = cls.objects.filter(id=id).update(id=id)
+        return business  
