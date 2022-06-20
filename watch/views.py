@@ -5,8 +5,8 @@ from .models import *
 from .forms import *
 from django.contrib.auth.models import User
 
-
 # Create your views here.
+
 @login_required(login_url='/accounts/login/')
 def index(request):
     current_user = request.user
@@ -22,6 +22,7 @@ def index(request):
     return render(request, 'index.html',{"profiles": profiles, "hoods":hoods})
 
 
+
 @login_required(login_url='/accounts/login/')
 def update_profile(request):
     current_user = request.user
@@ -35,6 +36,8 @@ def update_profile(request):
         else:
             form = ProfileForm()
     return render(request, 'update-profile.html', {'form': form})
+ 
+ 
 
 @login_required(login_url='/accounts/login/')
 def profile(request,pk):
@@ -42,6 +45,8 @@ def profile(request,pk):
     profiles = Profile.objects.filter(user = user).all()
     current_user = request.user
     return render(request,'profile.html',{"current_user":current_user, "user":user, "profiles":profiles})
+ 
+
 
 @login_required(login_url='/accounts/login/')
 def createhood(request):
@@ -56,6 +61,8 @@ def createhood(request):
         else:
             form = ProfileForm()
     return render(request,'create-hood.html',{'form':form})
+ 
+
 
 @login_required(login_url='/accounts/login/')
 def neighbourhood(request,id):
