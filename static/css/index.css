@@ -57,17 +57,12 @@ a {
 }
 
 .prof-pic {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.profile {
-
-    font-size: 80px;
-
-}
 
 .my-pic {
     border-radius: 50%;
@@ -148,6 +143,3 @@ a {
     border-radius: 50%;
 }
 
-html {
-    scroll-behavior: smooth;
-}

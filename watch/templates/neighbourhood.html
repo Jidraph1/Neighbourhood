@@ -31,8 +31,8 @@
             <div class="container text-center">
                 <h3>POLICE AUTHORITY</h3>
                 <p>{{item.name}}</p>
-                <p><i class="fas fa-phone me-2"></i> +254{{item.contact}}</p>
-                <p><i class="far fa-envelope me-2"></i>{{item.email}}</p>
+                <p> +254{{item.contact}}</p>
+                <p>{{item.email}}</p>
                 {% endfor %}
             </div>
         </div>
@@ -41,8 +41,8 @@
             <div class="container text-center">
                 <h3>HEALTH DEPARTMENT</h3>
                 <p>{{item.name}}</p>
-                <p><i class="fas fa-phone me-2"></i> +254{{item.contact}}</p>
-                <p><i class="far fa-envelope me-2"></i>{{item.email}}</p>
+                <p> +254{{item.contact}}</p>
+                <p>{{item.email}}</p>
                 {% endfor %}
             </div>
         </div>
@@ -98,8 +98,8 @@
                         <h5 class="card-text">{{business.name}}</h5>
                         <p><strong>Owner</strong>: {{business.user}}</p>
                         <p>BUSINESS CONTACTS:</p>
-                        <p><i class="fas fa-phone me-2"></i> +254{{business.phone_number}}</p>
-                        <p><i class="far fa-envelope me-2"></i> {{business.email}}</p>
+                        <p> +254{{business.phone_number}}</p>
+                        <p>{{business.email}}</p>
                         <p class="ms-auto">Created {{business.posted_at|timesince}} ago</p>
                     </div>
                 </div>
