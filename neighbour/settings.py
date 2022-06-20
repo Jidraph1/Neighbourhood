@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'watch.apps.WatchConfig',
     'bootstrap3',
     'cloudinary',
+    'tinymce'
 
 ]
 
