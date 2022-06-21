@@ -32,7 +32,12 @@ SECRET_KEY=config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config ('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = config('welcometothehood.herokuapp.com', '127.0.0.1')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://welcometothehood.herokuapp.com'
+]
 
 
 # Application definition
@@ -109,6 +114,7 @@ else:
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
 cloudinary.config( 
   cloud_name = "dgtjsiwow", 
   api_key = "346831399935182", 
@@ -163,3 +169,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+django_heroku.settings(locals())
